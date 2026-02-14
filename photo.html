@@ -13,6 +13,7 @@
             justify-content: center;
             align-items: center;
             font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
         }
 
         .photo-card {
@@ -21,6 +22,7 @@
             border-radius: 20px;
             text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            z-index: 2;
             animation: zoomIn 1s ease;
         }
 
@@ -44,18 +46,65 @@
         h2 {
             color: #d6336c;
         }
+
+        p {
+            color: #555;
+        }
+
+        /* 💖 Floating hearts */
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 24px;
+            animation: floatUp linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            from {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: translateY(-120vh) scale(1.5);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 
 <body>
 
+<!-- Photo Card -->
 <div class="photo-card">
-    <!-- Replace together.jpg with your real photo name -->
     <img src="together.jpg" alt="Our Photo">
-    <h2>💕Forever Us 💕</h2>
-    <p>💕This moment means everything to me.Hope we will stay forever together💕 </p>
+    <h2>💕 Forever Us 💕</h2>
+    <p>💕 This moment means everything to me.</p>
+    <p>Hope we will stay forever together 💖</p>
 </div>
+
+<!-- Floating hearts -->
+<script>
+    const symbols = ["❤️", "💖", "💕", "💗", "💘"];
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        heart.style.fontSize = (20 + Math.random() * 20) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+
+    setInterval(createHeart, 400);
+</script>
 
 </body>
 </html>
-
