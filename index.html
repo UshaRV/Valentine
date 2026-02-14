@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Valentine’s Day ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1.2s ease;
+            max-width: 420px;
+        }
+
+        .heart {
+            font-size: 80px;
+            animation: beat 1s infinite;
+        }
+
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+
+        h1 {
+            color: #ff4d6d;
+        }
+
+        p {
+            font-size: 18px;
+            color: #444;
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d6336c;
+        }
+
+        a button {
+            margin-top: 20px;
+            padding: 12px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 30px;
+            background: #ff4d6d;
+            color: white;
+            cursor: pointer;
+        }
+
+        a button:hover {
+            background: #d6336c;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="heart">❤️</div>
+    <h1>Happy Valentine’s Day</h1>
+
+    <p>Dear <span class="name">Gnanesh</span>,</p>
+
+    <p>
+        You make my life more beautiful every single day.
+    </p>
+
+    <p>
+        Will you be my Valentine today and always? 💕
+    </p>
+
+    <!-- Redirects to photo page -->
+    <button onclick="window.location.href='photo.html'">
+    Yes 💖</button>
+
+</div>
+
+</body>
+</html>
